@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+Scripts
 
 # Spyder project settings
 .spyderproject
@@ -160,4 +161,4 @@ cython_debug/
 #.idea/
 
 # big files
-.shape_predictor_68_face_landmarks.dat
+shape_predictor_68_face_landmarks.dat
