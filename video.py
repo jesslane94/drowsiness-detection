@@ -17,7 +17,6 @@ predictor = dlib.shape_predictor(p)
 cap = cv2.VideoCapture(0)
  
 while True:
-    # load the input image and convert it to grayscale
     _, image = cap.read()
 
     # initial test code for video 
@@ -25,7 +24,7 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'): 
         break """
     
-    # resize to 400 pixels
+    # resize to 400 pixels and convert to greyscale
     image = imutils.resize(image, width=400)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
@@ -34,9 +33,7 @@ while True:
     
     # loop over the face detections
     for (i, rect) in enumerate(rects):
-        # determine the facial landmarks for the face region, then
-        # convert the facial landmark (x, y)-coordinates to a NumPy
-        # array
+        # determine the facial landmarks for the face region, then convert the facial landmark (x, y)-coordinates to a NumPy array
         shape = predictor(gray, rect)
         shape = face_utils.shape_to_np(shape)
     
@@ -51,6 +48,7 @@ while True:
     # video ends if q key is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'): 
         break
-    
+
+# clean up
 cap.release()
 cv2.destroyAllWindows()
