@@ -1,7 +1,19 @@
+<!-- page formatting for viewing total blinks and yawns. -->
 
 {% extends "layout.html" %}
 {% block content %}
+    <h3 style="text-align: center;">View Totals</h3>
     <div>
-        <h3>{{ message }}</h3>
+      <table class="table">
+          <tbody>
+            {% for key, value in totals.items() %} 
+            <tr>
+              <th scope="row"></th>
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
     </div>
 {% endblock %}

@@ -18,7 +18,10 @@ def mouth_aspect_ratio(mouth):
 	v_distance1 = distance.euclidean(mouth[2], mouth[10])  # 51, 59
 	v_distance2 = distance.euclidean(mouth[4], mouth[8]) # 53, 57
 	# Horizontal distance
-	h_distance = distance.euclidean(mouth[4], mouth[8])  # 53, 57
-	mar = float(v_distance1 + v_distance2 / (2.0 * h_distance))
+	h_distance = distance.euclidean(mouth[0], mouth[6])  # 49, 55
+	mar = (v_distance1 + v_distance2) / (2.0 * h_distance)
 	return mar
+
+
+
 
